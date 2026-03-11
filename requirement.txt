@@ -1,0 +1,68 @@
+AI Cloud Dev Ops Engineer
+ Problem Statement
+
+
+Case Study: The Sales Insight Automator
+The Scenario
+You have just joined Rabbitt AI as an AI Cloud DevOps Engineer. The sales team is currently overwhelmed by quarterly data; they have massive CSV/Excel files but struggle to distill them into meaningful summaries for executive leadership.
+Your lead developer has tasked you with building a "Quick-Response Tool" The goal is to create a secure, containerized application where a team member can upload a data file and instantly trigger an AI-generated brief sent directly to their inbox.
+The Mission
+As the lead engineer on this sprint, you must build and deploy a functional prototype within a 3-hour window. Your implementation must be robust enough to handle raw data and professional enough to reside in our production ecosystem.
+1. Technical Requirements
+Frontend: A single-page application (SPA) where users can upload .csv or .xlsx files and input a recipient email. It must provide real-time feedback (loading/success/error states).
+Backend: Secured API Endpoints: Ensure the application is protected against common vulnerabilities and resource abuse.
+AI Engine: Integrate an LLM (e.g., Gemini or Groq) to parse the sales data and generate a professional narrative summary.
+Delivery: Integrate a mail service to send the generated summary to the requested email address.
+Documentation: A live Swagger/OpenAPI endpoint to allow the team to test the API independently.
+2. Infrastructure & DevOps
+We don't just write code; we build systems. Your deployment must include:
+Containerization: A production-ready Dockerfile and a docker-compose.yml that spins up the entire environment locally.
+Automation (CI/CD): A GitHub Action that triggers on Pull Requests to main. This should, at minimum, validate the build and lint the code.
+Deployment: The application must be live (e.g., Vercel for frontend, Render for backend).
+The Toolkit 
+To keep overhead low, you are authorized to use the following:
+Frameworks: React/Next.js (Frontend), FastAPI or Node.js (Backend).
+LLM: Google Gemini API or Groq (Llama 3) or any other API of your choice.
+Hosting: Vercel/Netlify (Frontend), Render (Backend) or any other platform of your choice.
+Deliverables
+Your submission to the team must include:
+Repository Link: A public GitHub repo containing the full source code.
+Live Access: URLs for the hosted frontend and the Swagger documentation.
+The "Engineer’s Log" (README):
+Clear steps to run the stack via docker-compose.
+A brief overview of how you secured the endpoints.
+A .env.example file with all necessary configuration keys
+Evaluation Rubric
+Criteria
+Focus Area
+Execution
+Does the flow work end-to-end? (Upload → AI Summary → Email Received).
+DevOps
+Docker image optimization and CI/CD pipeline reliability.
+Security
+How you interpreted "Secured Endpoints".
+Architecture
+Code cleanliness, modularity, and Swagger documentation quality.
+
+
+
+
+
+
+
+
+Reference Data
+You can use the following sales_q1_2026.csv for your initial testing:
+Date,Product_Category,Region,Units_Sold,Unit_Price,Revenue,Status
+2026-01-05,Electronics,North,150,1200,180000,Shipped
+2026-01-12,Home Appliances,South,45,450,20250,Shipped
+2026-01-20,Electronics,East,80,1100,88000,Delivered
+2026-02-15,Electronics,North,210,1250,262500,Delivered
+2026-02-28,Home Appliances,North,60,400,24000,Cancelled
+2026-03-10,Electronics,West,95,1150,109250,Shipped
+
+
+Submission Form Link: 
+
+https://docs.google.com/forms/d/e/1FAIpQLSeZCRci3ROXEFeJly2z-lFGfpqQkwF9xG-VrSOCTBQRDCV7yw/viewform?usp=publish-editor
+

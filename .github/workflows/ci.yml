@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: "postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+      GEMINI_API_KEY: "dummy_key"
+      RESEND_API_KEY: "dummy_key"
+      NEXT_PUBLIC_APP_URL: "http://localhost:3000"
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Ensure Prisma config is valid
+      run: npx prisma validate
+      
+    - name: Lint Next.js code
+      run: npm run lint
+      
+    - name: Build Next.js application
+      run: npm run build
